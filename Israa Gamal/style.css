@@ -1,0 +1,305 @@
+:root {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.active {
+    background-color: #333333;
+    transition: all 2s;
+}
+
+.pink {
+    color: #FF305B;
+}
+
+header nav {
+    padding: 10px 0;
+    z-index: 1;
+}
+
+header nav ul,
+.About ul,
+.Portfolio .list ul {
+    list-style: none;
+}
+
+.About ul:nth-child(2) {
+    margin-left: 50px;
+}
+
+.About ul li {
+    font-weight: 500;
+}
+
+header nav ul li,
+.Portfolio .list ul li {
+    display: inline-block;
+}
+
+header nav ul li a {
+    text-align: right;
+    text-decoration: none;
+    color: white;
+    margin: 10px;
+}
+
+header nav ul li a:hover,
+.Portfolio .list ul li a:hover {
+    color: #FF305B;
+    text-decoration: none;
+}
+
+.home {
+    padding: 20px 0px;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./images/Walking-People.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.home .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home h1 {
+    font-size: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.About {
+    padding: 50px 0px;
+}
+
+.About .col-md-6:nth-child(1) {
+    position: relative;
+}
+
+.About .col-md-6:nth-child(1) .border-div {
+    width: 70%;
+    height: 95%;
+    border: 8px solid #555555;
+    border-radius: 10px;
+}
+
+.About .col-md-6:nth-child(1) img {
+    width: 65%;
+    height: 95%;
+    position: absolute;
+    bottom: 0;
+    right: 150px;
+}
+
+.About div:nth-child(1) h3 {
+    padding: 0px 5px;
+    font-weight: bold;
+    border-left: 5px solid #FF305B;
+}
+
+.About .col-md-6:nth-child(2) div:nth-child(2) {
+    margin-left: 60px;
+}
+
+.div-btns button,
+.contact button {
+    background-color: #FF305B;
+    color: white;
+    padding: 5px;
+    width: 160px;
+    height: 45px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    transition: all 3s;
+}
+
+.contact button {
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 450;
+    width: 150px !important;
+    height: 40px !important;
+}
+
+.div-btns button:hover,
+.contact button:hover {
+    background-color: red;
+}
+
+.div-btns button:nth-child(2) {
+    margin-left: 10px;
+
+}
+
+.div-btns button svg,
+.home {
+    color: white;
+}
+
+.services {
+    background-color: #E1E1E1;
+}
+
+.services .col-12:nth-child(2) .col-md-3:hover {
+    background-color: white;
+    box-shadow: 1px 1px 7px #555555;
+    transition: all 3s;
+}
+
+.Portfolio .list ul li a {
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    margin: 10px;
+    text-transform: uppercase;
+}
+
+.Portfolio .col-md-4 img {
+    position: relative;
+}
+
+.Portfolio .shadow {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    opacity: 0;
+}
+
+.Portfolio .shadow:hover {
+    opacity: 1;
+    transition: all 2s;
+}
+
+.Portfolio img {
+    height: 100%;
+    width: 100%;
+}
+
+.Portfolio .col-md-4 img:hover,
+.About img:hover {
+    box-shadow: 5px 5px 10px #555555;
+    transition: all 2s;
+}
+
+.Portfolio2 {
+    background-color: #E1E1E1;
+    margin: 60px 0;
+}
+
+.Portfolio2 .row {
+    padding: 60px 0;
+}
+
+.data {
+    background-color: #E1E1E1;
+    height: 300px;
+    width: 800px;
+}
+
+.carousel-inner .row .span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10%;
+    height: 10%;
+    color: #FF305B;
+}
+
+.blog {
+    background-color: #E1E1E1;
+}
+
+.blog .col-md-4 .card-body {
+    background-color: white;
+}
+
+.blog .col-md-4 .card-title a {
+    text-decoration: none;
+    color: #555555;
+}
+
+.blog .col-md-4 .paragraph {
+    text-transform: uppercase;
+}
+
+.blog .col-md-4 .card-title a:hover,
+.blog .col-md-4 .paragraph:hover {
+    color: #ff305b;
+}
+
+.blog svg:hover {
+    fill: #ff305b !important;
+}
+
+.contact,
+.blog,
+.testimonial {
+    margin: 60px 0;
+}
+
+.contact .form-group input {
+    width: 50% !important;
+
+}
+
+.contact input {
+    height: 40px;
+
+}
+
+.contact input:focus {
+    border: none;
+    outline: 1px solid red;
+}
+
+.contact textarea:focus {
+    border: none;
+    outline: 1px solid red;
+}
+
+.contact textarea {
+    height: 100px;
+}
+
+.contact :placeholder-shown {
+    padding: 10px;
+}
+
+footer {
+    background-color: #333333;
+}
+
+footer svg {
+    cursor: pointer;
+}
+
+.decoration span:nth-child(1),
+.decoration span:nth-child(3) {
+    display: inline-block;
+    background-color: #FF305B;
+    width: 60px;
+    height: 1px;
+}
+
+.decoration span:nth-child(2) {
+    display: inline-block;
+    background-color: #FF305B;
+    width: 160px;
+    height: 1px;
+}
