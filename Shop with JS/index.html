@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Bootstrap/bootstrap.min.css">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: wheat;
+        }
+        label{
+            margin-top: 20px;
+        }
+      table thead th{
+        padding: 10px 50px;
+      }
+      table tbody tr{
+        padding: 50px;
+      }
+      .btn{
+        padding: 7px;
+      }
+    </style>
+</head>
+<body class="container">
+    <div class="form-group col-8 mt-5">
+        <div>
+        <label for="name">Product Name</label>
+        <input type="text" class="form-control" id="name"/>
+        </div>
+        <div>
+        <label for="price">Product Price</label>
+        <input type="text" class="form-control" id="price"/>
+        </div>
+        <div>
+        <label for="category">Product Category</label>
+        <input type="text" class="form-control" id="category"/>
+        </div>
+        <div>
+        <label for="des">Product Description</label>
+        <textarea class="form-control" id="des"></textarea>
+        </div>
+        <button onclick="pro()" class="btn btn-primary mt-3">Add Product</button>
+        <button id="update-button" onclick="" class="btn btn-primary mt-3 d-none">Update Product</button>
+    </div>
+<div class="row">
+    <div class="search py-5 mx-4">
+        <label for="search">Search</label>
+        <input oninput="searchProduct(this.value)" type="text" placeholder="Search" class="search" id="search"/>
+    </div>
+    </div>
+    <section class="justify-content-center mx-auto">
+        <table>
+            <thead class="text-center">
+                <th>Index</th>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>Product Category</th>
+                <th>Product Description</th>
+            </thead>
+            <tbody id="content">
+
+            </tbody>
+        </table>
+    </section>
+    <script src ="./app.js"></script>
+</body>
+</html>
