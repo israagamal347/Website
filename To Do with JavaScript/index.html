@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Bootstrap/bootstrap.min.css" />
+    <title>Israa Gamal</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-12 my-5">
+
+                <div id="createForm" class="card mb-3">
+                    <div class="card-header">
+                        <legend>Create Todo</legend>
+                    </div>
+                    <div class="card-body form-group d-inline-block">
+                        <label for="title">Title</label><br>
+                        <input type="text" id="title" placeholder="Todo Title" class="form-control" /><br>
+                        <label for="body">Body</label><br>
+                        <textarea id="body" placeholder="Todo Body" class="form-control"></textarea><br>
+                    </div>
+                    <div style="display:flex; justify-content:center;">
+                        <button class="btn btn-primary mb-3" id="addtodobtn">Add Todo</button>
+                    </div>
+                </div>
+
+                <div id="editForm" class="card mb-3" style="display: none;" >
+                    <div class="card-header">
+                        <legend>Update Todo</legend>
+                    </div>
+                    <div class="card-body form-group d-inline-block">
+                        <label for="edit_title">Title</label><br>
+                        <input type="text" id="edit_title" placeholder="Todo Title" class="form-control" /><br>
+                        <label for="edit_body">Body</label><br>
+                        <textarea id="edit_body" placeholder="Todo Body" class="form-control"></textarea><br>
+                    </div>
+                    <div style="display:flex; justify-content:center;">
+                        <button class="btn btn-warning mb-3" id="updateBtn">Update Todo</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-sm-12">
+                <div id="todoscontainer" class="todoscontainer">
+                    <div class="card" id="todoEl1">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-6">
+                                    Todo Title ...
+                                </div>
+                                <div class="col-6 text-right">
+                                    <button data-todo="#todoEl1" class="btn btn-danger delete-btn"><svg
+                                            data-todo="#todoEl1" xmlns="http://www.w3.org/2000/svg" width="16"
+                                            height="16" fill="currentColor" class="bi bi-trash-fill delete-btn"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                                        </svg></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p>Todo Content ...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script href="./main.js"></script>
+    <script>
+        var addtodobtn = document.querySelector('#addtodobtn');
+        var title = document.querySelector('#title');
+        var body = document.querySelector('#body');
+        var todoscontainer = document.querySelector('#todoscontainer');
+        var btn = document.querySelector('.btn-danger');
+        // var editForm = document.getElementById('editForm');
+        // var createForm = document.getElementById('createForm');
+        const appEl ={
+            editForm: document.getElementById('editForm'),
+            createForm : document.getElementById('createForm')
+        }
+        const editFormEl ={
+            title : document.getElementById('edit_title'),
+            body : document.getElementById('edit_body'),
+            updateBtn : document.getElementById('updateBtn')
+        }
+        var store = [];
+        var edit_target = null;  
+
+
+
+
+            addtodobtn.onclick = function () {
+            var title_value = title.value;
+            var body_value = body.value;
+            // if (title_value == '') {
+            //     title.style.border = '2px solid red';
+            // } else {
+            //     title.style.border = '';
+            // }
+            // if (body_value == '') {
+            //     body.style.border = '2px solid red';
+            // } else {
+            //     body.style.border = '';
+            // }
+
+            if (validate()) {
+                var newObject =
+                    {
+                        id: Math.round(Math.random()*1000),
+                        title: title.value,
+                        body: body.value
+                    };
+                    store.push(newObject);
+                    render(store);
+                
+                //     var id = Math.round(Math.random());
+                //     var newTodo = `
+                //             <div class="card mb-5" id="TodoEl${id}">
+                //             <div class="card-header">
+                //             <div class="row">
+                //                 <div class="col-6">
+                //                     ${title_value}
+                //                 </div>
+                //                 <div class="col-6 text-right">
+                //                     <button data-Todo="#TodoEl${id}" class="btn btn-danger delete-btn"><svg data-Todo="#TodoEl${id}" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill delete-btn" viewBox="0 0 16 16">
+                //                         <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                //                     </svg></button>
+                //                 </div>
+                //             </div>
+                //             </div>
+                //             <div class="card-body">
+                //         <p>${body_value}</p>
+                //             </div>
+                //         </div>`;
+                // }
+                // todoscontainer.innerHTML = newTodo + todoscontainer.innerHTML;
+
+                //clear input field
+                title.value = '';
+                body.value = '';
+
+            }
+            };
+
+            todoscontainer.onclick = function (e) {
+
+                if (e.target.classList.contains('delete-btn')) {
+                    //  console.log('delete event', e.target.dataset.todo);
+                    //  var Todo_El = document.querySelector(e.target.dataset.todo);
+                    //  Todo_El.remove()
+                    // document.querySelector(e.target.dataset.todo).remove();
+
+
+                    
+                     var todoId = e.target.dataset.todo;
+                     var new_store = [];
+                     for (var i=0; i<store.length; i++){
+                         if(store[i].id != todoId){
+                            new_store.push(store[i]);
+                         }
+                         
+                     }
+                     store = new_store;
+                     render(store);
+
+
+
+                   //   console.log(todoId);
+                  //  console.log(store);
+                }
+
+                if (e.target.classList.contains('edit-btn')) {
+                   
+                     console.log("Hey!");
+                     var todoId = e.target.dataset.todo;
+                     for(var i=0; i<store.length; i++){
+                        if(store[i].id == todoId){
+                            edit_target = store[i];
+                        }
+                     }
+                     editFormEl.title.value = edit_target.title;
+                     editFormEl.body.value = edit_target.body;
+                     appEl.editForm.style.display = 'block';
+                     appEl.createForm.style.display = 'none';
+              
+            };
+        }
+            
+            editFormEl.updateBtn.onclick = function(e){
+                if(validateEdit()){
+                var new_store = [];
+                for (var i = 0; i<store.length; i++){
+                    if(store[i].id != edit_target.id){
+                        new_store.push(store[i]);
+                    }
+                    else{
+                        edit_target.title = editFormEl.title.value;
+                        edit_target.body = editFormEl.body.value;
+                        new_store.push(edit_target);
+                    }
+                   
+                }
+                store = new_store;
+                render(store);
+                appEl.editForm.style.display = 'none';
+                appEl.createForm.style.display = 'block';
+                }
+            };
+
+
+
+            function render(TodoList){
+                var TodosElements='';
+                for (var i=0; i<TodoList.length; i++){
+                    TodosElements +=
+                   ` <div class="card mb-5" id="todoEl${TodoList[i].id}">
+                             <div class="card-header">
+                             <div class="row">
+                                 <div class="col-6">
+                                     ${TodoList[i].title}
+                                 </div>
+                                 <div class="col-6 text-right">
+                                    <button data-todo="${TodoList[i].id}" class="btn btn-warning edit-btn"><svg data-todo="${TodoList[i].id}" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square edit-btn" viewBox="0 0 16 16">
+                                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                        </svg></button>
+
+                                     <button data-todo="${TodoList[i].id}" class="btn btn-danger delete-btn"><svg data-todo="${TodoList[i].id}" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill delete-btn" viewBox="0 0 16 16">
+                                         <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                                     </svg></button>
+                                 </div>
+                             </div>
+                             </div>
+                             <div class="card-body">
+                         <p>${TodoList[i].body}</p>
+                            </div>
+                        </div>`;
+                
+            }
+            todoscontainer.innerHTML = TodosElements;
+        };
+            function validate(){
+            var is_Valid = true;
+            if (title.value == '') {
+                title.style.border = '2px solid red';
+                is_Valid = false;
+            } else {
+                title.style.border = '';
+            }
+            if (body.value == '') {
+                body.style.border = '2px solid red';
+                is_Valid = false;
+            } else {
+                body.style.border = '';
+            }
+             return is_Valid;
+        };
+            function validateEdit(){
+                var is_Valid = true;
+                if(editFormEl.title.value == ''){
+                    editFormEl.title.style.border = '1px solid red';
+                    is_Valid = false;
+                }
+                else{
+                     editFormEl.title.style.border ='';
+                }
+                if(editFormEl.body.value == ''){
+                    editFormEl.body.style.border = '1px solid red';
+                    is_Valid = false;
+                }
+                else{
+                    editFormEl.body.style.border ='';
+                }
+                return is_Valid;
+            }
+    </script>
+</body>
+
+</html>
