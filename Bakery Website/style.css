@@ -1,16 +1,18 @@
-:root {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-#About, #Offer, #Gallery, #Blog, #Contact{
-    margin-top: 70px;
+
+#About,
+#Offer,
+#Gallery,
+#Blog,
+#Contact {
+    margin-top: 60px;
 }
+
 img {
     width: 100%;
     height: 100%;
@@ -19,23 +21,27 @@ img {
 header nav {
     background-color: white;
 }
-header ul li{
+
+header ul li {
     position: relative;
 }
-header ul li a::after{
-    margin:auto;
+
+header ul li a::after {
+    margin: auto;
     content: '';
     position: absolute;
     bottom: -8px;
     left: 0px;
     height: 3px;
     width: 0%;
-    background-color:#8F7854;
-    transition: width 1s;    
+    background-color: #8F7854;
+    transition: width 1s;
 }
-header ul li a:hover::after{
+
+header ul li a:hover::after {
     width: 100%;
 }
+
 header .logo {
     width: 150px;
 }
@@ -54,12 +60,14 @@ header nav ul {
 header nav ul li {
     display: inline;
     padding: 0px 15px;
+    font-size: 18px;
 }
 
 header nav ul li a {
     text-decoration: none;
     font-weight: bold;
     color: rgb(146, 146, 146);
+    font-family: 'Times New Roman', Times, serif !important;
 }
 
 header nav ul li a:hover {
@@ -133,16 +141,20 @@ header nav ul li a:hover {
     justify-content: center;
     align-items: center;
 }
-#About .txt ul li div:hover{
+
+#About .txt ul li div:hover {
     background-color: #8F7854;
 }
-#About .txt ul li div svg:hover{
-    fill:white;
-    z-index:1;
+
+#About .txt ul li div svg:hover {
+    fill: white;
+    z-index: 1;
 }
-#About .txt ul li div:hover{
+
+#About .txt ul li div:hover {
     transition: all 2s;
 }
+
 #About .txt ul li p,
 #Blog ul li p {
     margin-left: 20px;
@@ -151,6 +163,10 @@ header nav ul li a:hover {
 #Offer .col-6:nth-child(1) {
     padding-right: 80px;
     line-height: 30px;
+}
+
+h2 {
+    font-weight: bold;
 }
 
 #Offer .col-6:nth-child(2) {
@@ -178,19 +194,22 @@ header nav ul li a:hover {
     color: gray;
     padding: 0px 10px;
 }
-#Gallery .picture{
+
+#Gallery .picture {
     position: relative;
 }
-#Gallery .gray{
-    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));
+
+#Gallery .gray {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
     width: 90%;
     height: 285px;
-    position:absolute;
-    top:19px;
+    position: absolute;
+    top: 19px;
     left: 19px;
     opacity: 0;
 }
-#Gallery .gray:hover{
+
+#Gallery .gray:hover {
     opacity: 1;
     transition: all 2s;
 }
@@ -209,18 +228,22 @@ header nav ul li a:hover {
     justify-content: center;
     align-items: center;
 }
-#Blog ul li div:hover{
-    background-color:beige;
+
+#Blog ul li div:hover {
+    background-color: beige;
     transition: all 2s;
 }
-#Blog ul li div svg:hover{
-    fill:#8F7854;
+
+#Blog ul li div svg:hover {
+    fill: #8F7854;
 }
+
 #Contact {
     background-color: #403D38;
     color: gray;
     padding: 50px 0;
 }
+
 #Contact ul li {
     margin-top: 20px;
     line-height: 25px;
@@ -230,7 +253,7 @@ header nav ul li a:hover {
 #Contact h5 {
     margin-bottom: 30px;
     font-weight: bold;
-    color:white;
+    color: white;
 }
 
 #contact .col-3:nth-child(4) {
@@ -242,18 +265,23 @@ header nav ul li a:hover {
 #Contact ul li .text {
     margin-left: 10px;
 }
-#Contact p:hover, #Contact ul li:hover{
-    color:white;
+
+#Contact p:hover,
+#Contact ul li:hover {
+    color: white;
     transition: all 2s;
 }
-footer{
+
+footer {
     background-color: #353330;
     color: white;
 }
-footer img{
+
+footer img {
     width: 300px;
 }
- footer .row:nth-child(3) div{
+
+footer .row:nth-child(3) div {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -262,10 +290,9 @@ footer img{
     justify-content: center;
     text-align: center;
     align-items: center;
-} 
-footer .row:nth-child(3) svg:hover{
-    fill:white;
-    transition: all 2s;
 }
 
-
+footer .row:nth-child(3) svg:hover {
+    fill: white;
+    transition: all 2s;
+}
