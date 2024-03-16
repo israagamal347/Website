@@ -9,10 +9,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-  
+
     <title>Document</title>
     <style>
-      
+        nav {
+            background-color: #a517ba;
+        }
+
+        nav img {
+            width: min-content;
+            position: absolute;
+            top: 7px;
+            left: 60px;
+        }
+
         .first-sec {
             background-color: #a517ba;
             color: white;
@@ -37,94 +47,145 @@
             width: 4%;
             height: 4%;
         }
-  
+
+        #navbarTogglerDemo02 ul {
+            text-align: right !important;
+            position: absolute;
+            top: 7px;
+            right: 60px;
+        }
+
+        #navbarTogglerDemo02 ul li {
+            padding: 0 15px;
+            position: relative;
+        }
+
+        #navbarTogglerDemo02 ul li a {
+            color: white;
+            font-size: 21px;
+            border: 1px solid transparent;
+        }
+
+        #navbarTogglerDemo02 ul li a:hover,
+        #navbarTogglerDemo02 ul li a:focus {
+            border: 1px solid #fff;
+        }
+
+        #home {
+            background-image: linear-gradient(to bottom, #a517ba, #5f1782);
+        }
+
+
+        #services button {
+            background-image: linear-gradient(to bottom, #5f1782, #a517ba);
+            border-radius: 20px;
+            color: white;
+            padding: 8px;
+        }
+
+        #services button:hover {
+            background-image: linear-gradient(to bottom, #a517ba, #5f1782);
+        }
+
+        footer {
+            background-image: linear-gradient(to bottom, #5f1782, #a517ba);
+            color: white;
+        }
+
+        #contact .client {
+            border-left: 5px solid #a517ba;
+        }
     </style>
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #a517ba;">
-            <img style="width: min-content;" src="./images/demo-logo.png" />
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <img src="./images/demo-logo.png" alt="" />
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
                 aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse mx-5" id="navbarTogglerDemo02">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0" style="color: white;">
+                <ul class="navbar-nav mt-2 mt-lg-0" style="color: white;">
                     <li class="nav-item active">
-                        <a class="nav-link" style="color: white; font-size: 22px;" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color: white; font-size: 22px;" href="#">Services</a>
+                        <a class="nav-link" href="#services">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color: white; font-size: 22px;">About Us</a>
+                        <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color: white; font-size: 22px;">Contact</a>
+                        <a class="nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
-        </div>
+            </div>
         </nav>
     </header>
     <main>
-        <section class="first-sec" style="background-image: linear-gradient(to bottom,#a517ba,#5f1782);">
+        <section id="home" class="first-sec">
             <div class="container">
                 <div class="row pt-5 d.d-flex">
                     <div class="col-sm-6 pt-5">
                         <div class="pt-5">
-                            <h1 class="text-uppercase">Lorem, ipsum dolor.</h1>
-                            <p class="font-weight-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
-                                consectetur hic adipisci veniam aspernatur distinctio mollitia aut quaerat nulla odit!
+                            <h5 class="text-uppercase">Hello, I'm</h5>
+                            <h1 class="text-uppercase">Israa Gamal Mohamed</h1>
+                            <p class="font-weight-normal"> Software Engineer specializing in Front End Web Development,
+                                proficient in crafting captivating user interfaces through modern technologies like
+                                HTML5, CSS3, and JavaScript frameworks. Committed to collaborating effectively with
+                                cross-functional teams to deliver intuitive interfaces.
                             </p>
                             <div class="mt-5 d-flex">
                                 <img class="rounded float-left pr-2" src="./images/play.png">
-                                <h4 class="font-weight-normal"> Watch Tutorials</h4>
+                                <h4 class="font-weight-normal"> Resume</h4>
                             </div>
                         </div>
 
                     </div>
-                    <div class="col-sm-6">
-                        <img class="card-img-top" style="width:100%; height:100%;" class="" src="./images/home2.png" />
+                    <div class="col-sm-6 home">
+                        <img class="card-img-top" style="width:100%; height:100%;" class="" src="./images/home.png" />
                     </div>
                 </div>
             </div>
         </section>
         <div>
-            <img style="background-image: linear-gradient(to bottom,#5f1782,#a517ba); width:100%;" src="./images/wave1.png" />
+            <img style="background-image: linear-gradient(to bottom,#5f1782,#a517ba); width:100%;"
+                src="./images/wave1.png" />
         </div>
         <br>
         <br>
-        <section class="second-sec">
+        <section id="services" class="second-sec">
             <div class="container">
                 <div class="row d-flex text-center">
                     <div class="col-12 text-center pb-3">
-                        <h3 style="text-decoration:underline;" class="text-uppercase">What We Do</h3>
+                        <h3 style="text-decoration:underline;" class="text-uppercase">What Do I Offer?</h3>
                     </div>
-                    <div class="col-sm-4 col-md-4">
+                    <div class="col-sm-4 col-md-4 pt-5">
                         <div>
                             <img src="./images/service1.png">
-                            <h4 class="text-uppercase">Growth Marketing</h4>
+                            <h4 class="text-uppercase pt-3">HTML / CSS</h4>
                         </div>
                         <div>
                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias magnam consequatur nulla
                                 itaque saepe voluptas eum sunt ipsam ad facilis.</p>
                         </div>
                     </div>
-                    <div class="col-sm-4 col-md-4">
+                    <div class="col-sm-4 col-md-4 pt-5">
                         <div>
                             <img src="./images/service2.png">
-                            <h4 class="text-uppercase">online branding</h4>
+                            <h4 class="text-uppercase pt-3">Bootstrap</h4>
                         </div>
                         <div>
                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias magnam consequatur nulla
                                 itaque saepe voluptas eum sunt ipsam ad facilis.</p>
                         </div>
                     </div>
-                    <div class="col-sm-4 col-md-4">
+                    <div class="col-sm-4 col-md-4 pt-5">
                         <div>
                             <img src="./images/service3.png">
-                            <h4 class="text-uppercase">animated ads</h4>
+                            <h4 class="text-uppercase pt-3">JavaScript</h4>
                         </div>
                         <div>
                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias magnam consequatur nulla
@@ -132,20 +193,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 text-center pt-3">
-                    <button style="background-image: linear-gradient(to right, #5f1782,#a517ba); border-radius: 20px; color:white; width: fit-content;" class="btn rounded-square">All
+                <div class="col-12 text-center pt-5 pb-3">
+                    <button class="btn rounded-square">All
                         Services</button>
                 </div>
             </div>
         </section>
-        <section class="third-sec  mt-5 jumbotron">
+        <section id="about" class="third-sec  mt-5 jumbotron">
             <div class="container">
                 <div class="row d-flex">
                     <div class="col-12 text-center pb-3">
-                        <h3 style="text-decoration:underline;" class="text-uppercase">Why choose us</h3>
+                        <h3 style="text-decoration:underline;" class="text-uppercase">Why choose Me?</h3>
                     </div>
                     <div class="col-sm-6 col-md-6 mt-5">
-                        <h3>Why We Are Different</h3>
+                        <h3 class="pb-3 pl-4">Why am I Different?</h3>
                         <ul>
                             <li>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
@@ -169,7 +230,7 @@
                 </div>
             </div>
         </section>
-        <section class="fourth-sec mt-5">
+        <section id="contact" class="fourth-sec mt-5">
             <div class="col-12 text-center pb-2">
                 <h3 style="text-decoration:underline;" class="text-uppercase">Why client stay</h3>
             </div>
@@ -181,12 +242,12 @@
                         <div class="media-body">
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam itaque ad corporis
                                 porro? Expedita dolorum omnis recusandae. Itaque, ex sapiente.</p>
-                            <h3>Mr Robot.</h3>
+                            <h3>Mr Omar.</h3>
                             <p>Lorem ipsum dolor sit amet.</p>
                         </div>
                     </div>
                 </div>
-                <div style="border-left: 5px solid #a517ba;" class="col-sm-4 col-md-4">
+                <div class="col-sm-4 col-md-4 client">
                     <div class="media">
                         <img style="width:18%;" src="./images/user1.jpg" class="align-self-end mr-3 rounded-circle"
                             alt="...">
@@ -206,7 +267,7 @@
         <br>
         <section style="background-color: #F8F9FA" class="fifth-sec mt-5">
             <div class="col-12 text-center pt-5 pb-3">
-                <h3 class="text-uppercase">find us on social media</h3>
+                <h3 class="text-uppercase">find me on social media</h3>
             </div>
             <div class="d-flex justify-content-center mt-1">
                 <img src="./images/facebook-icon.png" />
@@ -225,26 +286,28 @@
     <div style="background-image: linear-gradient(to bottom,#a517ba,#5f1782);">
         <img src="./images/wave2.png" />
     </div>
-    <footer  style="background-image: linear-gradient(to bottom,#5f1782,#a517ba);color: white;">
+    <footer>
         <div class="container">
-            <div class="row pt-3">
+            <div class="row pt-3 pb-4">
                 <div class="col-sm-4 col-md-4">
                     <img style="width: 40%;" src="./images/demo-logo.png" />
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias commodi laborum excepturi
                         incidunt perferendis molestiae provident illum eum quo iure.</p>
                 </div>
                 <div class="col-sm-4 col-md-4">
-                    <h5 class="text-uppercase">Contact Us</h5>
-                       <p> Lorem ipsum dolor sit amet.</p>
-                       <p> Lorem ipsum dolor sit amet.</p>
-                       <p> Lorem ipsum dolor sit amet.</p>
+                    <h5 class="text-uppercase">Contact Me</h5>
+                    <p> Lorem ipsum dolor sit amet.</p>
+                    <p> Lorem ipsum dolor sit amet.</p>
+                    <p> Lorem ipsum dolor sit amet.</p>
                 </div>
                 <div class="col-sm-4 col-md-4">
                     <h5 class="text-uppercase">Subscribe News Letter</h5>
                     <form class="form-inline mt-3">
                         <input class="form-control mr-sm-2" type="email" placeholder="Your Email">
-                        <button style="color: white; background-image: linear-gradient(to right, #5f1782,#a517ba); border-radius: 20px; width: fit-content;" class="btn my-2 my-sm-0" type="submit">Subscribe</button>
-                      </form>
+                        <button
+                            style="color: white; background-image: linear-gradient(to right, #5f1782,#a517ba); border-radius: 20px; width: fit-content;"
+                            class="btn my-2 my-sm-0" type="submit">Subscribe</button>
+                    </form>
                 </div>
                 <br>
             </div>
